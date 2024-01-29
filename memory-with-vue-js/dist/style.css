@@ -1,0 +1,87 @@
+body {
+  background: oldlace;
+  padding: 20px;
+  font-family: Helvetica, Arial, Sans-Serif;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+  grid-auto-rows: 100px;
+  grid-gap: 15px;
+  justify-content: center;
+  perspective: 800px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+i.fas {
+  font-size: 40px;
+  color: #333;
+}
+
+.victoryState {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 5px 5px 0 0 #333;
+  cursor: pointer;
+  animation: flipUp 0.5s forwards;
+}
+.card i {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+.card.down {
+  animation: flipDown 0.5s forwards;
+}
+.card.down i {
+  opacity: 0;
+}
+.card.matched {
+  animation: matching 0.3s forwards;
+}
+
+@keyframes flipDown {
+  0% {
+    background: #fff;
+    transform: rotateY(0deg);
+    box-shadow: 5px 5px 0 0 #333;
+  }
+  100% {
+    background: #73847f;
+    transform: rotateY(180deg);
+    box-shadow: -5px 5px 0 0 #333;
+  }
+}
+@keyframes flipUp {
+  0% {
+    background: #73847f;
+    transform: rotateY(180deg);
+    box-shadow: -5px 5px 0 0 #333;
+  }
+  100% {
+    background: #fff;
+    transform: rotateY(0deg);
+    box-shadow: 5px 5px 0 0 #333;
+  }
+}
+@keyframes matching {
+  0% {
+    background: #fff;
+  }
+  100% {
+    background: lightpink;
+  }
+}
