@@ -1,6 +1,0 @@
-<div id="app">
-  <p class="victoryState" v-if="victory">Done! <button v-on:click="cardsShuffle" class="btn btn-primary">Refresh ?</button></p>
-  <div v-for="(card, index) in cards" :key="index" :class="[{'down': card.down && !card.matched, 'up': !card.down, 'matched': card.matched}, ' card']" v-on:click="handleClick(card)">
-    <i :class="'fas ' + card.icon"></i>
-  </div>
-</div>
